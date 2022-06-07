@@ -1,0 +1,76 @@
+$time: 20s
+.floatingCircles
+    position: absolute
+    width: 387px
+    height: 581px
+    overflow: hidden
+    position: relative
+    border-radius: 20px
+.circle
+    width: 228px
+    height: 228px
+    position: absolute
+    border-radius: 50%
+    transform: translate(-50%,-50%)
+    filter: blur(40px)
+    transition: transform
+    &_red
+        background: #FA448C
+        animation: red $time infinite linear alternate
+    &_yellow
+        background: #FEC859
+        animation: yellow $time 1s infinite linear alternate
+    &_blue
+        background: #0076B2
+        animation: blue $time infinite linear alternate
+
+@keyframes red
+    0%
+        top: 0
+        left: 0
+    20%
+        top: 0
+        left: 100%
+    40%
+        top: 50%
+        left: 100%
+    60%
+        top: 100%
+        left: 0
+    100%
+        top: 0
+        left: 0
+
+@keyframes yellow
+    0%
+        top: 50%
+        left: 100%
+    20%
+        top: 100%
+        left: 100%
+    40%
+        top: 100%
+        left: 0%
+    60%
+        top: 0%
+        left: 0
+    100%
+        top: 50%
+        left: 100%
+
+@keyframes blue
+    0%
+        top: 100%
+        left: 0%
+    20%
+        top: 50%
+        left: 0%
+    40%
+        top: 0%
+        left: 0%
+    60%
+        top: 50%
+        left: 100%
+    100%
+        top: 100%
+        left: 0%

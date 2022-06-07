@@ -1,0 +1,6 @@
+mixin splitedWord(name)
+    -
+        const word = name.split("")
+    div(class!=attributes.class)
+        each i,idx in word 
+            div(class!=attributes.class+"__letter" data-id=idx)= i
