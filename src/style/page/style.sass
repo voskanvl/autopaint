@@ -8,10 +8,14 @@ $posUpLetters: 0 0 1 9px, 1 75px 0 0, 2 147px 1 -9px, 3 230px 2 -9px, 4 306px 1 
 $posDownLetters: 0 0 2 9px, 1 75px 1 0, 2 147px 0 -9px, 3 215px 1 -9px
 *,*::before,*::after
     box-sizing: border-box
+    margin: 0
+    padding: 0
 body
     margin: 0
     padding: 0
     background: #000
+    color: #fff
+    font-family: Montserrat, sans-serif
 .caption
     display: flex
     flex-direction: column
@@ -51,9 +55,46 @@ body
     position: relative
     display: flex
     align-items: center
+    &:not(:last-child)
+        margin-bottom: 77px
     &__text
         color: #fff
         width: 464px
         font-size: 18px
-        font-family: Montserrat, sans-serif
         margin-left: 27px
+.fiveReasons
+    width: 1218px
+    margin: 0 auto
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    &__left
+    &__title
+        color: #F6F4F0
+        text-transform: uppercase
+        font-size: 80px
+        margin-bottom: 18px
+    &__choise
+        text-transform: uppercase
+        font-size: 40px
+
+.services
+    display: flex
+    column-gap: 31px
+    width: 1223px
+    margin: 0 auto
+    &__title
+        text-align: center
+.button
+    position: absolute
+    bottom: 75px
+    left: 50%
+    transform: translate(-50%)
+    background: none
+    border-radius: 20px
+    border: 1px solid #00B1AB
+    color: #fff
+    padding: 13px 45px
+    font-weight: 500
+    transition: background .5s
+    &:hover
+        background: #00B1AB

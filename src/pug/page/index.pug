@@ -9,10 +9,23 @@ include ../../fitures/bigCaption/bigCaption.pug
         {color: "blue", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
         {color: "rose", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
     ]
-each i in reasons
-    .reason
-        +star(i.color)
-        .reason__text= i.text
+.fiveReasons
+    .fiveReasons__left
+        h1.fiveReasons__title 5 причин
+        p.fiveReasons__choise выбрать нас
+    .fiveReasons__right
+        each i in reasons
+            .reason
+                +star(i.color)
+                .reason__text= i.text
+
+.services 
+    each i in [0,1,2]
+        +floatingCircles 
+            h2.services__title УСЛУГИ
+            div Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum
+            div Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum
+            button.button ЗАПИСАТЬСЯ
 
 .caption
     .upCaption
