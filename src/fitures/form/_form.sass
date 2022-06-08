@@ -1,0 +1,30 @@
+.form
+    border-radius: 10px
+    padding: 32px 74px
+    position: relative
+    width: 595px
+    height: 611px
+    background: #09081512
+    backdrop-filter: blur(25px)
+    & > *
+        display: block
+    & > .form__input
+        width: 100%
+        border-radius: 20px
+        border: 1px solid #00B1AB
+        background: none
+        font-size: 18px
+        font-weight: 500
+        padding: 17px 28px
+        color: #fff
+        &:not(:last-child)
+            margin-bottom: 17px
+        &::placeholder
+            color: #fff
+            text-transform: uppercase
+    & > textarea
+        height: 144px
+    &__title
+        font-size: 30px
+        text-align: center
+        text-transform: uppercase

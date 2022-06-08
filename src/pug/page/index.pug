@@ -9,7 +9,9 @@ include ../../fitures/bigCaption/bigCaption.pug
         {color: "blue", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
         {color: "rose", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
     ]
-.fiveReasons
+section.fiveReasons
+    .fiveReasons__img 
+        img(src="../../assets/img/cloud2.png" alt="")
     .fiveReasons__left
         h1.fiveReasons__title 5 причин
         p.fiveReasons__choise выбрать нас
@@ -19,7 +21,7 @@ include ../../fitures/bigCaption/bigCaption.pug
                 +star(i.color)
                 .reason__text= i.text
 
-.services 
+section.services 
     each i in [0,1,2]
         +floatingCircles 
             h2.services__title УСЛУГИ
@@ -40,7 +42,12 @@ include ../../fitures/bigCaption/bigCaption.pug
 
             button.button ЗАПИСАТЬСЯ
 
-.caption
+section.order 
+    order__img 
+        img(src="../../assets/img/carBottom.png" alt="")
+    oreder__form 
+        include ../../fitures/form/form.pug
+section.caption
     .upCaption
         +splitedWord('ПОКРЫТИЕ')(class="bigCaption")
     .downCaption
