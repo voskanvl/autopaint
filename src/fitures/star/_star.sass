@@ -1,0 +1,24 @@
+.star
+    position: absolute
+    height: 120px
+    width: 105px
+    & > *
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+    &__back
+        border-radius: 5px
+        width: 47px
+        height: 120px
+        background: #FF3031
+    &__front
+        border-radius: 8px
+        width: 105px
+        height: 105px
+        background: #09081512
+        backdrop-filter: blur(25px)
+        @-moz-document url-prefix()
+            background: url("../../assets/img/star.png")
+            height: 120px
+            width: 105px
