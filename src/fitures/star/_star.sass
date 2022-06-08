@@ -1,5 +1,6 @@
 .star
-    position: absolute
+    // position: absolute
+    position: relative
     height: 120px
     width: 105px
     & > *
@@ -11,14 +12,23 @@
         border-radius: 5px
         width: 47px
         height: 120px
-        background: #FF3031
+        &_red
+            background: #FF3031
+        &_yellow
+            background: #FEC859
+        &_green
+            background: #00B1AB
+        &_blue
+            background: #0076B2
+        &_rose
+            background: #FA448C
     &__front
         border-radius: 8px
         width: 105px
         height: 105px
-        background: #09081512
         backdrop-filter: blur(25px)
+        background: #09081512
         @-moz-document url-prefix()
-            background: url("../../assets/img/star.png")
+            background: url("../../assets/img/star-red.png")
             height: 120px
             width: 105px

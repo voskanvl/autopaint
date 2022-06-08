@@ -1,6 +1,19 @@
 include ../../fitures/floatingCircles/floatingCircles.pug
 include ../../fitures/star/star.pug
 include ../../fitures/bigCaption/bigCaption.pug
+- 
+    const reasons = [
+        {color: "red", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
+        {color: "yellow", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
+        {color: "green", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
+        {color: "blue", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
+        {color: "rose", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
+    ]
+each i in reasons
+    .reason
+        +star(i.color)
+        .reason__text= i.text
+
 .caption
     .upCaption
         +splitedWord('ПОКРЫТИЕ')(class="bigCaption")
