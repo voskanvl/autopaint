@@ -23,8 +23,21 @@ include ../../fitures/bigCaption/bigCaption.pug
     each i in [0,1,2]
         +floatingCircles 
             h2.services__title УСЛУГИ
-            div Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum
-            div Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum
+            ul.services__list 
+                - 
+                    const services = [
+                    {name:"lorem ipsum dolor", price: 999},
+                    {name:"lorem ipsum dolor", price: 999},
+                    {name:"lorem ipsum dolor", price: 999},
+                    {name:"lorem ipsum dolor", price: 999},
+                    {name:"lorem ipsum dolor", price: 999},
+                    {name:"lorem ipsum dolor", price: 999},
+                    ]
+                each i in services
+                    li.services__item.services-item 
+                        .services-item__name= i.name
+                        .services-item__price!= i.price+'&#8381;'
+
             button.button ЗАПИСАТЬСЯ
 
 .caption

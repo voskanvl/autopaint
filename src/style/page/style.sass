@@ -84,6 +84,7 @@ body
     margin: 0 auto
     &__title
         text-align: center
+        margin-bottom: 50px
 .button
     position: absolute
     bottom: 75px
@@ -96,5 +97,14 @@ body
     padding: 13px 45px
     font-weight: 500
     transition: background .5s
+    cursor: pointer
     &:hover
         background: #00B1AB
+.services-item
+    list-style: none
+    display: flex
+    align-items: center
+    justify-content: space-between
+    font-size: 14px
+    &:not(:last-child)
+        margin-bottom: 17px
