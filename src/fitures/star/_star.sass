@@ -1,3 +1,8 @@
+=moz($img)
+    @-moz-document url-prefix()
+        background: url($img)
+        height: 120px
+        width: 105px
 .star
     // position: absolute
     position: relative
@@ -28,7 +33,18 @@
         height: 105px
         backdrop-filter: blur(25px)
         background: #09081512
-        @-moz-document url-prefix()
-            background: url("../../assets/img/star-red.png")
-            height: 120px
-            width: 105px
+        &_red
+            background: #FF3031
+            +moz("../../assets/img/stars/star-red.png")
+        &_yellow
+            background: #FEC859
+            +moz("../../assets/img/stars/star-yellow.png")
+        &_green
+            background: #00B1AB
+            +moz("../../assets/img/stars/star-green.png")
+        &_blue
+            background: #0076B2
+            +moz("../../assets/img/stars/star-blue.png")
+        &_rose
+            background: #FA448C
+            +moz("../../assets/img/stars/star-rose.png")

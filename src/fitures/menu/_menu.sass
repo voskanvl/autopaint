@@ -9,17 +9,18 @@
             position: static
             transform: none
     &__logo
-        margin-right: 78px
+        margin-right: calc(78 / 1920 * 100vw)
     &__nav
         display: flex
         align-items: center
         justify-content: space-between
-        column-gap: 4em
-        margin-right: 158px
+        column-gap: calc(4 * 16px / 1920px * 100vw)
+        margin-right: calc(158 / 1920 * 100vw)
         & > li
             list-style: none
     &__phone
         margin-right: 33px
+        flex: 0 0 124px
     &__button.button
         border: none
         z-index: 1
