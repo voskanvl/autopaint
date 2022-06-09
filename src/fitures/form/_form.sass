@@ -1,13 +1,18 @@
 .form
     border-radius: 10px
     padding: 32px 74px
-    position: relative
+    // position: absolute
+    // left: calc(975 / 1920 * 100vw)
+
     width: 595px
     height: 611px
     background: #09081512
     backdrop-filter: blur(25px)
     @-moz-document url-prefix()
         background: #09081599
+    @media screen and ( max-width: 650px )
+        width: 100%
+        padding: 32px clamp(47px, 11.3vw ,74px)
     & > *
         display: block
     & > .form__input
@@ -15,7 +20,7 @@
         border-radius: 20px
         border: 1px solid #00B1AB
         background: none
-        font-size: 18px
+        font-size: 16px
         font-weight: 500
         padding: 17px 28px
         color: #fff
@@ -24,6 +29,8 @@
         &::placeholder
             color: #fff
             text-transform: uppercase
+        @media screen and ( max-width: 650px )
+            font-size: clamp(12px,3vw,16px)
     & > textarea
         height: 144px
         resize: none
@@ -34,3 +41,5 @@
         text-align: center
         text-transform: uppercase
         margin-bottom: 31px
+        @media screen and ( max-width: 650px )
+            font-size: clamp(20px,5vw,30px)

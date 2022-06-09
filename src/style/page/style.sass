@@ -15,6 +15,7 @@
     margin: 0
     padding: 0
 body
+    overflow-x: hidden
     margin: 0
     padding: 0
     background: #181818
@@ -136,10 +137,15 @@ body
     display: flex
     position: relative
     margin-bottom: 162px
+    max-width: 1571px
     &__form
-        position: relative
-        left: -217px
+        // left: -217px
+        width: fit-content
+        right: 0
         top: 83px
+        position: absolute
+        @media screen and ( max-width: 650px )
+            width: 100%
 .product
     display: grid
     // grid-template-columns: repeat(2,1fr)
