@@ -1,0 +1,30 @@
+.menu
+    width: fit-content
+    margin: 0 auto
+    margin-top: 32px
+    &__wrap
+        display: flex
+        align-items: center
+        & > .button
+            position: static
+            transform: none
+    &__logo
+        margin-right: 78px
+    &__nav
+        display: flex
+        align-items: center
+        justify-content: space-between
+        column-gap: 4em
+        margin-right: 158px
+        & > li
+            list-style: none
+    &__phone
+        margin-right: 33px
+    &__button.button
+        border: none
+        z-index: 1
+        background: linear-gradient(to right,rgba(9, 8, 21, 0.01),rgba(255,255,255,0.05),rgba(9, 8, 21, 0.01))
+        // box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05)
+        backdrop-filter: blur(25px)
+        &:hover
+            background: linear-gradient(to right,rgba(9, 8, 21, 0.01),rgba(255,255,255,0.05),rgba(9, 8, 21, 0.01))
