@@ -19,12 +19,40 @@ body
     background: #181818
     color: #fff
     font-family: Montserrat, sans-serif
-.caption
-    display: flex
-    flex-direction: column
-    align-items: flex-end
-    padding: 0 2rem
+
+.tiser
     position: relative
+    height: 948px
+    &__cloud
+        position: absolute
+        top: -322px
+        right: -279px
+        z-index: -1
+
+    &__right
+        width: 1192px
+        position: absolute
+        top: 0
+        right: 257px
+
+.caption
+    height: 400px
+    &__wrap
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        padding: 0 2rem
+        position: relative
+
+.upCaption, .downCaption
+    position: relative
+
+.upCaption
+    width: 59%
+
+.downCaption
+    width: 29%
+
 .downCaption
     margin-top: 11em
     right: 0
@@ -52,8 +80,9 @@ body
             filter: drop-shadow($shadow 4px 6px #0005)
 .baloon
     position: absolute
-    top: 0
+    top: -157px
     transition: transform 1s
+    z-index: 1
 .reason
     position: relative
     display: flex
@@ -125,3 +154,33 @@ body
         position: relative
         left: -217px
         top: 83px
+.product
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    grid-column-gap: 66px
+    max-width: 1220px
+    margin: 0 auto
+
+    &__wrap
+        position: relative
+        height: 100%
+
+    &__title
+        text-transform: uppercase
+        font-size: 45px
+        font-weight: bold
+        margin: 0
+        margin-bottom: 24px
+
+    &__text
+        font-size: 18px
+        margin-bottom: 58px
+
+    &__button
+        bottom: 58px
+        border: none
+        background: linear-gradient(to right,rgba(9, 8, 21, 0.01),rgba(255,255,255,0.05),rgba(9, 8, 21, 0.01))
+        // box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05)
+        backdrop-filter: blur(25px)
+        &:hover
+            background: linear-gradient(to right,rgba(9, 8, 21, 0.01),rgba(255,255,255,0.05),rgba(9, 8, 21, 0.01))

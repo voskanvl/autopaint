@@ -9,6 +9,21 @@ include ../../fitures/bigCaption/bigCaption.pug
         {color: "blue", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
         {color: "rose", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
     ]
+
+section.tiser
+    .tiser__left
+    .tiser__right
+        article.caption
+            .caption__wrap
+                .upCaption
+                    +splitedWord('ПОКРЫТИЕ')(class="bigCaption")
+                .downCaption
+                    +splitedWord('АВТО')(class= "bigCaption")
+                .baloon 
+                    img(src="../../assets/img/baloon.png")
+        .tiser__cloud 
+            img(src="../../assets/img/cloud1.png", alt="cloud1")
+    
 section.fiveReasons
     .fiveReasons__img 
         img(src="../../assets/img/cloud2.png" alt="")
@@ -42,17 +57,16 @@ section.services
 
             button.button ЗАПИСАТЬСЯ
 section.product 
-    include ../../fitures/slider/slider.pug
+    .product__left-side
+        .product__wrap
+            h1.product__title наша краска под ваши предпочтения
+            .product__text Duis eleifend condimentum urna eu finibus. Cras a enim hendrerit, eleifend ex et, eleifend nibh. Sed dignissim, sapien a porta posuere, tellus sapien dapibus nibh, at sodales velit est ut risus. Cras dignissim massa lacus, ut porta odio tincidunt vitae. Nunc malesuada nec elit ut dignissim. Praesent in commodo lorem. Mauris eu massa commodo, laoreet ex in, auctor diam. Integer bibendum eget urna tempor condimentum.
+            button.button.product__button узнать стоимость
+    .product__right-side
+        include ../../fitures/slider/slider.pug
 
 section.order 
     .order__img 
         img(src="../../assets/img/carBottom.png" alt="")
     .order__form 
         include ../../fitures/form/form.pug
-section.caption
-    .upCaption
-        +splitedWord('ПОКРЫТИЕ')(class="bigCaption")
-    .downCaption
-        +splitedWord('АВТО')(class= "bigCaption")
-    .baloon 
-        img(src="../../assets/img/baloon.png")
