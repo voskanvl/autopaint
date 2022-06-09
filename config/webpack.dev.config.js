@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const path = require("path");
 const { merge } = require("webpack-merge");
 const baseWebpackConfig = require("./webpack.base.config");
 const paths = require("./webpack.paths");
@@ -14,6 +15,7 @@ module.exports = merge(baseWebpackConfig, {
         open: false,
         historyApiFallback: true,
         allowedHosts: "all",
+        hot: true,
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
     module: {
