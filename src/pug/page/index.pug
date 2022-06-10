@@ -27,9 +27,19 @@ html(lang="ru")
         .container
             - const navs = ['Преимущества','Наша краска','Услуги','Заявка']
             - const phone = '8 (05)102-10-65'
-            section.modal
-                .modal__body
-                    +menu(navs,phone,"modal")
+            //- section.modal
+            //-     .modal__cross 
+            //-         svg(width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg")
+            //-             path( d="M26.25 8.75L8.75 26.25" stroke="#ECF0F3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+            //-             path( d="M8.75 8.75L26.25 26.25" stroke="#ECF0F3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+            //-     .modal__body
+            
+            +menu(navs,phone,"modal")
+                .modal__cross 
+                    svg(width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path( d="M26.25 8.75L8.75 26.25" stroke="#ECF0F3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                        path( d="M8.75 8.75L26.25 26.25" stroke="#ECF0F3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+            
                         
             +menu(navs, phone, "menu")
             section.tiser
