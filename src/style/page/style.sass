@@ -138,14 +138,29 @@ body
     position: relative
     margin-bottom: 162px
     max-width: 1571px
+    // @media screen and ( max-width: 1024px )
+    //     height: 509px
     &__form
         // left: -217px
         width: fit-content
         right: 0
         top: 83px
         position: absolute
+        @media screen and ( max-width: 1024px )
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
         @media screen and ( max-width: 650px )
             width: 100%
+    &__img
+        @media screen and ( max-width: 1024px )
+            margin-top: 513px
+            // position: absolute
+            // transform: translateX(-50%)
+            width: 100%
+            overflow: hidden
+        & > img
+            width: 117vw
 .product
     display: grid
     // grid-template-columns: repeat(2,1fr)

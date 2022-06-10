@@ -34,17 +34,22 @@
         backdrop-filter: blur(25px)
         background: #09081512
         &_red
-            background: #FF3031
-            +moz("../../assets/img/stars/star-red.png")
+            @-moz-document url-prefix()
+                background: #FF3031
+                +moz("../../assets/img/stars/star-red.png")
         &_yellow
-            background: #FEC859
-            +moz("../../assets/img/stars/star-yellow.png")
+            @-moz-document url-prefix()
+                background: #FEC859
+                +moz("../../assets/img/stars/star-yellow.png")
         &_green
-            background: #00B1AB
-            +moz("../../assets/img/stars/star-green.png")
+            @-moz-document url-prefix()
+                background: #00B1AB
+                +moz("../../assets/img/stars/star-green.png")
         &_blue
-            background: #0076B2
-            +moz("../../assets/img/stars/star-blue.png")
+            @-moz-document url-prefix()
+                background: #0076B2
+                +moz("../../assets/img/stars/star-blue.png")
         &_rose
-            background: #FA448C
-            +moz("../../assets/img/stars/star-rose.png")
+            @-moz-document url-prefix()
+                background: #FA448C
+                +moz("../../assets/img/stars/star-rose.png")
