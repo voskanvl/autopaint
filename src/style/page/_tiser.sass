@@ -1,0 +1,23 @@
+.tiser
+    position: relative
+    height: 555px
+    margin-top: 250px
+    &__cloud
+        position: absolute
+        top: -322px
+        right: -279px
+        z-index: 0
+
+    &__right
+        width: 1192px
+        position: absolute
+        top: 0
+        right: calc( 257 / 1920 * 100%)
+        transform-origin: 50% 0
+        @media screen and ( max-width: 850px )
+            transform: scale(0.7)
+            right: -185px
+            top: -128px
+        @media screen and ( max-width: 520px )
+            transform: scale(0.5)
+            right: -300px

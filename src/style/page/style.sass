@@ -10,6 +10,10 @@
 @import "../../fitures/menu/_menu"
 @import "../../fitures/footer/_footer"
 
+@import "./_tiser"
+@import "./_fiveReason"
+@import "./_reason"
+
 *,*::before,*::after
     box-sizing: border-box
     margin: 0
@@ -25,22 +29,7 @@ body
 .container
     margin: 0
     padding: 0 1rem
-
-.tiser
-    position: relative
-    height: 555px
-    margin-top: 250px
-    &__cloud
-        position: absolute
-        top: -322px
-        right: -279px
-        z-index: 0
-
-    &__right
-        width: 1192px
-        position: absolute
-        top: 0
-        right: 257px
+    overflow: hidden
 
 .caption
     height: 400px
@@ -69,38 +58,6 @@ body
     top: -157px
     transition: transform 1s
     z-index: 3
-.reason
-    position: relative
-    display: flex
-    align-items: center
-    &:not(:last-child)
-        margin-bottom: 77px
-    &__text
-        color: #fff
-        width: 464px
-        font-size: 18px
-        margin-left: 27px
-.fiveReasons
-    width: 1218px
-    margin: 0 auto 157px
-    display: grid
-    grid-template-columns: repeat(2,1fr)
-    &__left
-    &__title
-        color: #F6F4F0
-        text-transform: uppercase
-        font-size: 80px
-        margin-bottom: 18px
-    &__choise
-        text-transform: uppercase
-        font-size: 40px
-    &__img
-        position: absolute
-        width: 1083px
-        height: 858px
-        left: 0
-        & > img
-            width: 100%
 
 .services
     display: flex

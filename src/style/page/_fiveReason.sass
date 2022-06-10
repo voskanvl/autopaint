@@ -1,0 +1,26 @@
+.fiveReasons
+    width: 1218px
+    margin: 0 auto 157px
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    @media screen and ('max-width': 1235px)
+        display: flex
+        flex-direction: column
+    &__left
+        margin-bottom: 42px
+    &__title
+        color: #F6F4F0
+        text-transform: uppercase
+        font-size: clamp(50px, 4.16vw ,80px)
+        margin-bottom: 18px
+
+    &__choise
+        text-transform: uppercase
+        font-size: 40px
+    &__img
+        position: absolute
+        max-width: 1083px
+        height: 858px
+        left: 0
+        & > img
+            width: 100%

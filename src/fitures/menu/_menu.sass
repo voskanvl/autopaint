@@ -2,30 +2,76 @@
     width: fit-content
     margin: 0 auto
     margin-top: 32px
+    @media screen and ('max-width: 970px')
+        width: 100%
     &__wrap
-        display: flex
-        align-items: center
+        display: grid
+        grid-template-columns: 1fr 3fr 124px 1fr
+        place-items: center
         & > .button
             position: static
             transform: none
+        @media screen and ('max-width: 920px')
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: space-between
     &__logo
         margin-right: calc(78 / 1920 * 100vw)
+        @media screen and ('max-width: 1024px')
+            margin-right: calc(78 / 1920 * 100vw - 2vw)
+            display: block
     &__nav
         display: flex
         align-items: center
         justify-content: space-between
-        column-gap: calc(4 * 16px / 1920px * 100vw)
-        margin-right: calc(158 / 1920 * 100vw)
+        width: 100%
         & > li
             list-style: none
+            width: 100%
+            & > a
+                display: block
+                text-decoration: none
+                color: #fff
+                text-align: center
+        & > li:nth-child(2)
+            flex: 1 0 30%
+
+        @media screen and ('max-width: 1024px')
+            margin: 0 1rem
+            column-gap: 1rem
+
+        @media screen and ('max-width: 970px')
+            display: none
+
+        @media screen and ('max-width: 820px')
+            background: red
+
     &__phone
-        margin-right: 33px
+        margin: 0 calc( 33 / 1920 * 100%)
         flex: 0 0 124px
+        & > a
+            text-decoration: none
+            color: fff
+        @media screen and ('max-width: 920px')
+            display: none
     &__button.button
         border: none
         z-index: 1
         background: linear-gradient(to right,rgba(9, 8, 21, 0.01),rgba(255,255,255,0.05),rgba(9, 8, 21, 0.01))
         // box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05)
+        position: static
+        transform: none
         backdrop-filter: blur(25px)
         &:hover
             background: linear-gradient(to right,rgba(9, 8, 21, 0.01),rgba(255,255,255,0.05),rgba(9, 8, 21, 0.01))
+        @media screen and ('max-width: 1024px')
+            padding: 13px
+        @media screen and ('max-width: 920px')
+            display: none
+    &__book
+        position: relative
+    &__burger
+        display: none
+        @media screen and ('max-width: 920px')
+            display: block
