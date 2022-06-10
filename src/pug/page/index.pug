@@ -1,6 +1,7 @@
 include ../../fitures/floatingCircles/floatingCircles.pug
 include ../../fitures/star/star.pug
 include ../../fitures/bigCaption/bigCaption.pug
+include ../../fitures/menu/menu.pug
 - 
     const reasons = [
         {color: "red", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia lectus vel consequat interdum"},
@@ -24,7 +25,13 @@ html(lang="ru")
                 title= "4x4 "
     body
         .container
-            include ../../fitures/menu/menu.pug
+            - const navs = ['Преимущества','Наша краска','Услуги','Заявка']
+            - const phone = '8 (05)102-10-65'
+            section.modal
+                .modal__body
+                    +menu(navs,phone,"modal")
+                        
+            +menu(navs, phone, "menu")
             section.tiser
                 .tiser__left
                     .tiser__car
