@@ -26,6 +26,7 @@ module.exports = {
     entry: {
         index: `${paths.src}/js/pages/index.js`,
     },
+    cache: false,
     output: {
         path: paths.dist,
         filename: "assets/js/[name].[contenthash].js",

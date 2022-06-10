@@ -9,13 +9,16 @@ module.exports = merge(baseWebpackConfig, {
     devtool: "eval-cheap-module-source-map",
     target: "web",
     devServer: {
-        static: paths.dist,
+        static: {
+            directory: path.dist,
+            watch: true,
+        },
         compress: true,
         port: 9100,
         open: false,
         historyApiFallback: true,
         allowedHosts: "all",
-        hot: true,
+        hot: false,
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
     module: {
