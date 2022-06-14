@@ -2,26 +2,77 @@
     width: fit-content
     margin: 0 auto
     margin-bottom: 50px
+    @media screen and ( max-width: 1024px )
+        width: 100%
+
     &__wrap
         display: flex
         align-items: center
         & > .button
             position: static
             transform: none
+        @media screen and ( max-width: 1024px )
+            flex-direction: column
+
     &__right
         border-top: 1px solid rgba(255, 255, 255, 0.21)
         padding-top: 32px
         display: flex
     &__logo
         margin-right: 78px
+
     &__nav
         display: flex
         align-items: center
         justify-content: space-between
         column-gap: 4em
-        margin-right: 236px
+        margin-right: clamp(16px, 13vw ,236px)
+
+        @media screen and ( max-width: 1075px )
+            margin-right: 1rem
+
         & > li
             list-style: none
+            & > a
+                text-decoration: none
+                color: #fff
+                cursor: pointer
+
     &__phone
         font-size: 24px
         font-weight: 500
+        flex: 0 0 100%
+
+    &__version1
+        @media screen and ( max-width: 1024px )
+            display: none
+    &__version2
+        display: none
+        @media screen and ( max-width: 1024px )
+            display: block
+        & .footer__logo
+            font-size: 40px
+            margin-right: 0
+            @media screen and ( max-width: 503px )
+                font-size: clamp(20px, 7.95vw ,40px)
+
+    &__up
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        padding-bottom: 9px
+
+        & > .footer__phone
+            flex: unset
+            @media screen and ( max-width: 503px )
+                font-size: clamp(16px, 4.77vw ,24px)
+    &__down
+        border-top: 1px solid rgba(255, 255, 255, 0.21)
+        width: 100%
+        padding-top: 23px
+
+        & > .footer__nav
+            column-gap: unset
+            width: 100%
+            justify-content: space-between

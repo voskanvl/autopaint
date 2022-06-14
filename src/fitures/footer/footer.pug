@@ -1,7 +1,20 @@
-.footer__wrap 
-    h1.footer__logo ЛОГОТИП
-    .footer__right
-        ul.footer__nav 
-            each i in navs 
-                li= i
-        .footer__phone 8 (05)102-10-65
+mixin footer(navs)
+        .footer__version1
+            .footer__wrap 
+                h1.footer__logo ЛОГОТИП
+                .footer__right
+                    ul.footer__nav 
+                        each i in navs 
+                            li
+                                a(href="#")= i
+                    .footer__phone 8 (05)102-10-65
+        .footer__version2 
+            .footer__wrap 
+                .footer__up
+                    h1.footer__logo ЛОГОТИП
+                    .footer__phone 8 (05)102-10-65
+                .footer__down
+                    ul.footer__nav 
+                        each i in navs 
+                            li
+                                a(href="#")= i

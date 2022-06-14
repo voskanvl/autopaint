@@ -56,6 +56,10 @@ if (document.readyState !== "loading") {
 
 function start() {
     const monitor = document.querySelector("#monitor");
+    const close = document.querySelector(".modal__cross");
+    const burger = document.querySelector(".menu__burger");
+    console.log(burger);
+    const modal = document.querySelector(".modal");
     const slider = new Splide("#splide", {
         type: "loop",
         perPage: 1,
@@ -68,4 +72,11 @@ function start() {
         "move",
         newIndex => (monitor.innerHTML = ["#ffa826", "#00B1AB"][newIndex]),
     );
+    const closeModal = () => (modal.style.display = "none");
+    const openModal = () => {
+        console.log("open modal");
+        modal.style.display = "block";
+    };
+    close.addEventListener("click", closeModal);
+    burger.addEventListener("click", openModal);
 }

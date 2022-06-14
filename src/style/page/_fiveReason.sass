@@ -1,8 +1,9 @@
 .fiveReasons
     width: 1218px
-    margin: 0 auto 157px
+    margin-bottom: 157px
     display: grid
     grid-template-columns: repeat(2,1fr)
+    position: relative
     @media screen and ('max-width': 1235px)
         display: flex
         flex-direction: column
@@ -24,3 +25,7 @@
         left: 0
         & > img
             width: 100%
+        @media screen and ('max-width': 1235px)
+            width: 100vw
+            transform: rotateY(180deg)
+            bottom: 0
