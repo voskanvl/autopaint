@@ -17,11 +17,13 @@ function clean(cb) {
 
 const jsTask = cb =>
     src("./src/js/pages/main.js")
+        .pipe(sourcemaps.init())
         .pipe(
             webpack({
                 mode: "development",
             }),
         )
+        .pipe(sourcemaps.write())
         .pipe(dest("./dist"));
 
 const pugTask = cb =>
