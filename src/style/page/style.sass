@@ -63,13 +63,16 @@ body
     z-index: 3
 
 .services
-    display: flex
-    column-gap: 31px
-    width: 1223px
-    margin: 0 auto
-    &__title
-        text-align: center
-        margin-bottom: 50px
+    overflow: auto
+    &__wrap
+        width: 1223px
+        display: flex
+        column-gap: 31px
+        margin: 0 auto
+        &__title
+            text-align: center
+            margin-bottom: 50px
+
 .button
     position: absolute
     bottom: 75px

@@ -85,25 +85,26 @@ html(lang="ru")
                 include ../../fitures/slider/slider.pug
                         
             section.services 
-                each i in [0,1,2]
-                    +floatingCircles 
-                        h2.services__title УСЛУГИ
-                        ul.services__list 
-                            - 
-                                const services = [
-                                {name:"lorem ipsum dolor", price: 999},
-                                {name:"lorem ipsum dolor", price: 999},
-                                {name:"lorem ipsum dolor", price: 999},
-                                {name:"lorem ipsum dolor", price: 999},
-                                {name:"lorem ipsum dolor", price: 999},
-                                {name:"lorem ipsum dolor", price: 999},
-                                ]
-                            each i in services
-                                li.services__item.services-item 
-                                    .services-item__name= i.name
-                                    .services-item__price!= i.price+'&#8381;'
+                .services__wrap
+                    each i in [0,1,2]
+                        +floatingCircles 
+                            h2.services__title УСЛУГИ
+                            ul.services__list 
+                                - 
+                                    const services = [
+                                    {name:"lorem ipsum dolor", price: 999},
+                                    {name:"lorem ipsum dolor", price: 999},
+                                    {name:"lorem ipsum dolor", price: 999},
+                                    {name:"lorem ipsum dolor", price: 999},
+                                    {name:"lorem ipsum dolor", price: 999},
+                                    {name:"lorem ipsum dolor", price: 999},
+                                    ]
+                                each i in services
+                                    li.services__item.services-item 
+                                        .services-item__name= i.name
+                                        .services-item__price!= i.price+'&#8381;'
 
-                        button.button ЗАПИСАТЬСЯ
+                            button.button ЗАПИСАТЬСЯ
 
             section.order 
                 .order__img 
