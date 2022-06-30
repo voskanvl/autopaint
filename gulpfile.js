@@ -49,6 +49,10 @@ const watchTask = () => {
         "./src/js/pages/index.js",
         series(clean("./dist/index.js"), jsTask),
     ).on("change", browserSync.reload);
+    watch("./src/fitures/**/*", series(clean("./dist/*.html"), pugTask)).on(
+        "change",
+        browserSync.reload,
+    );
     watch("./src/pug/page/*", series(clean("./dist/*.html"), pugTask)).on(
         "change",
         browserSync.reload,
