@@ -13,13 +13,9 @@ const debounce = (f, ms) => {
     };
 };
 const shiftBaloon = ({ x, y, kX = 1, kY = 1 }) => {
-    baloon.style.transform = `translateX(${x * kX}%)`;
+    baloon.style.transform = `translateX(${x * kX}%) translateY(${y * kY}%)`;
 };
 const relativeCoords = ({ x, y, container, coordsBegin }) => {
-    console.log({
-        x: ((x - coordsBegin.x) / container.clientWidth) * 100,
-        y: ((y - coordsBegin.y) / container.clientHeight) * 100,
-    });
     return {
         x: ((x - coordsBegin.x) / container.clientWidth) * 100,
         y: ((y - coordsBegin.y) / container.clientHeight) * 100,
@@ -41,10 +37,10 @@ caption.addEventListener(
                 container: caption,
                 coordsBegin: beginCoords(caption),
             }),
-            kX: -0.3,
-            kY: -2,
+            kX: -0.1,
+            kY: -0.05,
         });
-    }, 200),
+    }, 100),
 );
 
 if (document.readyState !== "loading") {
@@ -57,7 +53,6 @@ function start() {
     const monitor = document.querySelector("#monitor");
     const close = document.querySelector(".modal__cross");
     const burger = document.querySelector(".menu__burger");
-    console.log(burger);
     const modal = document.querySelector(".modal");
     const slider = new Splide("#splide", {
         type: "loop",
@@ -73,7 +68,6 @@ function start() {
     );
     const closeModal = () => (modal.style.display = "none");
     const openModal = () => {
-        console.log("open modal");
         modal.style.display = "block";
     };
     close.addEventListener("click", closeModal);

@@ -45,10 +45,10 @@ const sassTask = cb =>
         .pipe(dest("./dist"));
 
 const watchTask = () => {
-    watch(
-        "./src/js/pages/index.js",
-        series(clean("./dist/index.js"), jsTask),
-    ).on("change", browserSync.reload);
+    watch("./src/js/pages/main.js", series(clean("./dist/main.js"), jsTask)).on(
+        "change",
+        browserSync.reload,
+    );
     watch("./src/fitures/**/*", series(clean("./dist/*.html"), pugTask)).on(
         "change",
         browserSync.reload,
@@ -70,7 +70,7 @@ exports.watch = watchTask;
 exports.browserSync = parallel(sync, watchTask);
 
 exports.default = parallel(
-    series(clean("./dist/index.js"), jsTask),
+    series(clean("./dist/main.js"), jsTask),
     series(clean("./dist/*.html"), pugTask),
     series(clean("./dist/*.css"), sassTask),
 );
