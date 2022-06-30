@@ -8,8 +8,6 @@ const named = require("vinyl-named");
 const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
 
-const DIST = "./dist";
-
 const clean = path => cb => {
     del([path]);
     cb();
@@ -19,6 +17,9 @@ const sync = () =>
     browserSync.init({
         server: {
             baseDir: "dist",
+        },
+        ui: {
+            port: 8080,
         },
     });
 
