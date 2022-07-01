@@ -57,7 +57,12 @@ html(lang="ru")
                 title= "Авто покраска "
     body
         .container
-            - const navs = ['Преимущества','Наша краска','Услуги','Заявка']
+            - 
+                const navs = [
+                    {name:'Преимущества',href:"#fiveReasons"},
+                    {name:'Наша краска',href:"#product"},
+                    {name:'Услуги',href:"#services"},
+                    {name:'Заявка',href:"#form"}]
             - const phone = '8 (05)102-10-65'
             //- section.modal
             //-     .modal__cross 
@@ -96,7 +101,7 @@ html(lang="ru")
                     .more__arrow
                         img(src="../../assets/img/arrow.svg" alt="")
                 
-            section.fiveReasons
+            section.fiveReasons#fiveReasons
                 .fiveReasons__img 
                     img(src="../../assets/img/cloud2.png" alt="")
                 .fiveReasons__left
@@ -108,7 +113,7 @@ html(lang="ru")
                             +star(i.color, i.svg)
                             .reason__text!= i.text
 
-            section.product 
+            section.product#product 
                 .product__wrap
                     h1.product__title Мы позаботимся об исправности Вашего авто!
                     .product__text 
@@ -122,7 +127,7 @@ html(lang="ru")
                 button.button.product__button узнать стоимость
                 include ../../fitures/slider/slider.pug
                         
-            section.services 
+            section.services#services 
                 .services__wrap
                     - 
                         const services = [

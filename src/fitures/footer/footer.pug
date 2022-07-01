@@ -15,7 +15,7 @@ mixin footer(navs)
                     ul.footer__nav 
                         each i in navs 
                             li
-                                a(href="#")= i
+                                a(href=i.href)= i.name
                     .footer__phone 8 (05)102-10-65
         .footer__version2 
             .footer__wrap 
@@ -32,6 +32,6 @@ mixin footer(navs)
                     .footer__phone 8 (05)102-10-65
                 .footer__down
                     ul.footer__nav 
-                        each i in navs 
+                        each k in navs 
                             li
-                                a(href="#")= i
+                                a(href=k.href)= k.name
