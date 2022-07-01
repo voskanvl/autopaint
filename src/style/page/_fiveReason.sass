@@ -4,9 +4,10 @@
     grid-template-columns: repeat(2,1fr)
     // position: relative
     margin: 0 auto 171px
-    @media screen and ('max-width': 1235px)
+    @media screen and ('max-width': 1143px)
         display: flex
         flex-direction: column
+        position: relative
     &__left
         margin-bottom: 42px
     &__title
@@ -23,11 +24,11 @@
         width: 56vw
         height: 858px
         left: 0
+        height: fit-content
+        @media screen and ('max-width': 1143px)
+            width: 100vw
+            transform: rotateY(180deg)
+            position: absolute
+            bottom: -208px
         & > img
             width: 100%
-            @media screen and ('max-width': 1235px)
-                width: 100vw
-                transform: rotateY(180deg)
-                bottom: 0
-            @media screen and ('max-width': 1024px)
-                bottom: -740px

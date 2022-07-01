@@ -2,7 +2,7 @@
     width: fit-content
     margin: 0 auto
     margin-bottom: 50px
-    @media screen and ( max-width: 1024px )
+    @media screen and ( max-width: 1080px )
         width: 100%
 
     &__wrap
@@ -26,22 +26,33 @@
         align-items: center
         justify-content: space-between
         column-gap: 4em
-        margin-right: clamp(16px, 13vw ,236px)
-
+        flex: 1 0 64%
+        @media screen and ( max-width: 1100px )
+            column-gap: 2em
         @media screen and ( max-width: 1075px )
             margin-right: 1rem
+        @media screen and ( max-width: 486px )
+            font-size: clamp(11px,2vw,20px)
 
         & > li
             list-style: none
+            text-align: center
             & > a
                 text-decoration: none
                 color: #fff
                 cursor: pointer
+            &:nth-child(2)
+                flex: 0 0 25%
 
     &__phone
         font-size: 24px
         font-weight: 500
-        flex: 0 0 100%
+        text-align: right
+        flex: 0 0 210px
+        margin-left: clamp(16px, 6vw ,236px)
+        @media screen and ( max-width: 510px )
+            margin: 0
+            font-size: clamp(1em,2vw,24px)
 
     &__version1
         @media screen and ( max-width: 1024px )
@@ -62,7 +73,8 @@
         justify-content: space-between
         width: 100%
         padding-bottom: 9px
-
+        @media screen and ( max-width: 510px )
+            flex-direction: column
         & > .footer__phone
             flex: unset
             @media screen and ( max-width: 503px )

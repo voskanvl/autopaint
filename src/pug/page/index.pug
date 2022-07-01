@@ -63,7 +63,7 @@ html(lang="ru")
                     {name:'Наша краска',href:"#product"},
                     {name:'Услуги',href:"#services"},
                     {name:'Заявка',href:"#form"}]
-            - const phone = '8 (05)102-10-65'
+            - const phone = '8 (902)203-80-54'
             //- section.modal
             //-     .modal__cross 
             //-         svg(width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -87,7 +87,7 @@ html(lang="ru")
                     article.caption
                         .caption__wrap
                             .upCaption
-                                +splitedWord('ПОКРЫТИЕ')(class="bigCaption")
+                                +splitedWord('ПОКРАСКА')(class="bigCaption")
                             .downCaption
                                 +splitedWord('АВТО')(class= "bigCaption")
                             .baloon 
@@ -136,7 +136,7 @@ html(lang="ru")
                     include ../../fitures/form/form.pug
 
             section.footer 
-                +footer(navs)
+                +footer(navs, phone)
 
     script(src="main.js")
                 

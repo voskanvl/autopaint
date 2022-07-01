@@ -93,6 +93,10 @@ function start() {
     };
     close.addEventListener("click", closeModal);
     burger.addEventListener("click", openModal);
+    const navs = document.querySelectorAll(".modal__nav a");
+    [...navs].forEach(a =>
+        a.addEventListener("click", () => setTimeout(closeModal, 200)),
+    );
 
     //--- VALIDATION ---
     const nameInput = document.querySelector(".form__name");
@@ -116,13 +120,13 @@ function start() {
     phoneMask.mask(phoneInput);
     const emailMask = new Inputmask({ regex: "\\w+@\\w+\\.\\w+" });
     emailMask.mask(emailInput);
-    const textMask = new Inputmask({ regex: "\\w{1,}" });
+    const textMask = new Inputmask({ regex: "[a-zA-Zа-яёА-ЯЁ0-9]{1,}" });
     textMask.mask(textInput);
-    const nameMask = new Inputmask({ regex: "\\w{1,}" });
+    const nameMask = new Inputmask({ regex: "[a-zA-Zа-яёА-ЯЁ0-9]{1,}" });
     nameMask.mask(nameInput);
 
     send.addEventListener("click", event => {
-        // event.preventDefault();
+        event.preventDefault();
         const queryMap = {
             name: encodeURIComponent(nameInput.value),
             phone: encodeURIComponent(phoneInput.value),
@@ -133,8 +137,23 @@ function start() {
             console.log(JSON.stringify(queryMap));
             fetch("/mail.php", {
                 method: "POST",
-                body: JSON.stringify(queryMap),
-            });
+                body: new FormData(document.forms[0]),
+            })
+                .then(r => {
+                    if (r.ok) {
+                        [...document.forms[0].elements].forEach(e => {
+                            e.value = "";
+                            e.setAttribute("untouched", true);
+                        });
+                        send.setAttribute("disabled", true);
+                        send.textContent = "Ваша заявка отправлена успешно";
+                        setTimeout(() => {
+                            send.removeAttribute("disabled");
+                            send.textContent = "Записаться";
+                        }, 5000);
+                    }
+                })
+                .catch(console.log);
         } else {
             [...document.forms[0].elements]
                 .filter(e => e.type !== "submit")

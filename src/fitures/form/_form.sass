@@ -8,11 +8,15 @@
     height: 611px
     background: #09081512
     backdrop-filter: blur(25px)
+    box-shadow: inset 0 0 68px rgba(255, 255, 255, 5%)
     @-moz-document url-prefix()
         background: #09081599
     @media screen and ( max-width: 650px )
         width: 100%
         padding: 32px clamp(47px, 11.3vw ,74px)
+
+    & button
+        width: 75%
     & > *
         display: block
     & > .form__input
