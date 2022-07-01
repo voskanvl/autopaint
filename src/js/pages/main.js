@@ -68,7 +68,14 @@ function start() {
     }).mount();
     slider.on(
         "move",
-        newIndex => (monitor.innerHTML = ["#ffa826", "#00B1AB"][newIndex]),
+        newIndex =>
+            (monitor.innerHTML = [
+                "#FFA826",
+                "#00B1AB",
+                "#C9D5FD",
+                "#CAF68A",
+                "#15100A",
+            ][newIndex]),
     );
     const closeModal = () => (modal.style.display = "none");
     const openModal = () => {

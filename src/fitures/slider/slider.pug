@@ -1,10 +1,17 @@
 .splide#splide
     .splide__track
         ul.splide__list
-            li.splide__slide
-                .splide__item 
-                    img(src="../../assets/img/products/product-yellow.png")
-            li.splide__slide
-                .splide__item 
-                    img(src="../../assets/img/products/product-green.png")
-    #monitor  #ffa826
+            - 
+                const images = [
+                    '../../assets/img/products/product-yellow.png',
+                    '../../assets/img/products/product-green.png',
+                    '../../assets/img/products/product-violet.png',
+                    '../../assets/img/products/product-rose.png',
+                    '../../assets/img/products/product-black.png',
+                    ]
+            each i in images
+                li.splide__slide
+                    .splide__item 
+                        img(src= i)
+           
+    #monitor  #FFA826
