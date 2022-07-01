@@ -130,13 +130,11 @@ function start() {
             text: encodeURIComponent(textInput.value),
         };
         if (isValidAllFields()) {
-            const query =
-                "?" +
-                Object.entries(queryMap)
-                    .map(([key, val]) => `${key}=${val}`)
-                    .join("&");
-            console.log("🚀 ~ query", query);
-            fetch("http://somesite/" + query);
+            console.log(JSON.stringify(queryMap));
+            fetch("/mail.php", {
+                method: "POST",
+                body: JSON.stringify(queryMap),
+            });
         } else {
             [...document.forms[0].elements]
                 .filter(e => e.type !== "submit")
