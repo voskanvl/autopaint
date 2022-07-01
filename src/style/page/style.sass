@@ -6,6 +6,7 @@
 @import "../../fitures/form/_form.sass"
 @import './splide.min'
 @import "../../fitures/slider/_slider"
+@import "../../fitures/slider/_sliderCarousel"
 @import "../../fitures/bigCaption/_bigCaption"
 @import "../../fitures/menu/_menu"
 @import "../../fitures/footer/_footer"
@@ -137,6 +138,7 @@ body
             width: 100%
     &__img
         overflow-x: hidden
+        margin-left: -1rem
         @media screen and ( max-width: 1024px )
             margin: 513px -15px 0 -63px
             // width: 100%
@@ -180,6 +182,8 @@ body
         margin-bottom: 49px
 
     &__button
+        display: block
+        text-align: center
         padding: 0
         grid-area: button
         transform: none
@@ -221,3 +225,7 @@ body
             height: 100%
 #monitor
     text-align: center
+
+.servicesCarousel
+    height: 581px
+    margin-bottom: 140px
