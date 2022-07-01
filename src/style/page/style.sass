@@ -102,6 +102,11 @@ body
     cursor: pointer
     &:hover
         background: #00B1AB
+    &:disabled
+        filter: contrast(0.5) grayscale(0%)
+        cursor: default
+        &:hover
+            background: none
 
 .services-item
     list-style: none

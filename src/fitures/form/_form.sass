@@ -29,8 +29,15 @@
         &::placeholder
             color: #fff
             text-transform: uppercase
+
         @media screen and ( max-width: 650px )
             font-size: clamp(12px,3vw,16px)
+
+        &:invalid
+            border: 1px solid red
+        &[untouched]:invalid
+            border: 1px solid #00B1AB
+
     & > textarea
         height: 144px
         resize: none

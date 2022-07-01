@@ -1,4 +1,5 @@
 import Splide from "@splidejs/splide";
+import Inputmask from "inputmask";
 
 const caption = document.querySelector(".caption");
 const baloon = document.querySelector(".baloon");
@@ -54,6 +55,9 @@ function start() {
     const close = document.querySelector(".modal__cross");
     const burger = document.querySelector(".menu__burger");
     const modal = document.querySelector(".modal");
+
+    const send = document.querySelector(".button.form__button");
+
     const slider = new Splide("#splide", {
         type: "loop",
         perPage: 1,
@@ -72,4 +76,54 @@ function start() {
     };
     close.addEventListener("click", closeModal);
     burger.addEventListener("click", openModal);
+
+    //--- VALIDATION ---
+    const nameInput = document.querySelector(".form__name");
+    const phoneInput = document.querySelector(".form__phone");
+    const emailInput = document.querySelector(".form__email");
+    const textInput = document.querySelector(".form__text");
+
+    const isValidAllFields = () => {
+        const isValidPhone = phoneInput.checkValidity();
+        const isValidEmail = emailInput.checkValidity();
+        const isValidText = textInput.checkValidity();
+        const isValidName = nameInput.checkValidity();
+        return isValidPhone && isValidEmail && isValidText && isValidName;
+    };
+
+    [...document.forms[0].elements].forEach(e =>
+        e.addEventListener("click", () => e.removeAttribute("untouched")),
+    );
+
+    const phoneMask = new Inputmask("+7(999) 999-99-99");
+    phoneMask.mask(phoneInput);
+    const emailMask = new Inputmask({ regex: "\\w+@\\w+\\.\\w+" });
+    emailMask.mask(emailInput);
+    const textMask = new Inputmask({ regex: "\\w{1,}" });
+    textMask.mask(textInput);
+    const nameMask = new Inputmask({ regex: "\\w{1,}" });
+    nameMask.mask(nameInput);
+
+    send.addEventListener("click", event => {
+        // event.preventDefault();
+        const queryMap = {
+            name: encodeURIComponent(nameInput.value),
+            phone: encodeURIComponent(phoneInput.value),
+            email: encodeURIComponent(emailInput.value),
+            text: encodeURIComponent(textInput.value),
+        };
+        if (isValidAllFields()) {
+            const query =
+                "?" +
+                Object.entries(queryMap)
+                    .map(([key, val]) => `${key}=${val}`)
+                    .join("&");
+            console.log("🚀 ~ query", query);
+            fetch("http://somesite/" + query);
+        } else {
+            [...document.forms[0].elements]
+                .filter(e => e.type !== "submit")
+                .forEach((e, i) => setTimeout(() => e.reportValidity(), 1000));
+        }
+    });
 }

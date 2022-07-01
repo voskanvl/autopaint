@@ -1,7 +1,7 @@
 form.form#form 
     .form__title оставьте заявку
-    input.form__input(placeholder="как к вам можно обращаться?")
-    input.form__input(placeholder="укажите ваш номер телефона")
-    input.form__input(placeholder="ваш e-mail")
-    textarea.form__input(placeholder="начните набирать сообщение")
-    button.button.form__button Записаться
+    input.form__input.form__name(placeholder="как к вам можно обращаться?" required name="name" untouched )
+    input.form__input.form__phone(placeholder="укажите ваш номер телефона" required type="phone" name="phone" untouched)
+    input.form__input.form__email(placeholder="ваш e-mail" required name="email" untouched)
+    textarea.form__input.form__text(placeholder="начните набирать сообщение" required name="text" untouched)
+    button.button.form__button() Записаться
