@@ -134,7 +134,6 @@ function start() {
             text: encodeURIComponent(textInput.value),
         };
         if (isValidAllFields()) {
-            console.log(JSON.stringify(queryMap));
             fetch("/mail.php", {
                 method: "POST",
                 body: new FormData(document.forms[0]),

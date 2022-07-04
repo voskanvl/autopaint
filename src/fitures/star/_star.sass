@@ -1,8 +1,9 @@
 =moz($img)
     @-moz-document url-prefix()
-        background: url($img)
+        background: url($img) no-repeat
         height: 120px
         width: 105px
+        background-position: center
 .star
     // position: absolute
     position: relative
@@ -19,18 +20,32 @@
         height: 73px
         &_red
             background: #FF3031
+            @-moz-document url-prefix()
+                display: none
         &_orange
             background: #FA5E2C
+            @-moz-document url-prefix()
+                display: none
         &_yellow
             background: #FEC859
+            @-moz-document url-prefix()
+                display: none
         &_green
             background: #60FA59
+            @-moz-document url-prefix()
+                display: none
         &_blue
             background: #00B1AB
+            @-moz-document url-prefix()
+                display: none
         &_cian
             background: #3096FA
+            @-moz-document url-prefix()
+                display: none
         &_violet
             background: #F84F92
+            @-moz-document url-prefix()
+                display: none
     &__front
         border-radius: 8px
         width: 64px
@@ -40,20 +55,28 @@
         &_red
             @-moz-document url-prefix()
                 background: #FF3031
-                +moz("../../assets/img/stars/star-red.png")
+                +moz("../../assets/img/stars/star-red_new.png")
+        &_orange
+            @-moz-document url-prefix()
+                background: #FF3031
+                +moz("../../assets/img/stars/star-orange_new.png")
         &_yellow
             @-moz-document url-prefix()
                 background: #FEC859
-                +moz("../../assets/img/stars/star-yellow.png")
+                +moz("../../assets/img/stars/star-yellow_new.png")
         &_green
             @-moz-document url-prefix()
                 background: #00B1AB
-                +moz("../../assets/img/stars/star-green.png")
+                +moz("../../assets/img/stars/star-green_new.png")
         &_blue
             @-moz-document url-prefix()
                 background: #0076B2
-                +moz("../../assets/img/stars/star-blue.png")
-        &_rose
+                +moz("../../assets/img/stars/star-blue_new.png")
+        &_cian
+            @-moz-document url-prefix()
+                background: #0076B2
+                +moz("../../assets/img/stars/star-cian_new.png")
+        &_violet
             @-moz-document url-prefix()
                 background: #FA448C
-                +moz("../../assets/img/stars/star-rose.png")
+                +moz("../../assets/img/stars/star-violet_new.png")
