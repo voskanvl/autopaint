@@ -69,8 +69,9 @@ exports.watch = watchTask;
 
 exports.browserSync = parallel(sync, watchTask);
 
-exports.default = parallel(
+const defaultTask = parallel(
     series(clean("./dist/main.js"), jsTask),
     series(clean("./dist/*.html"), pugTask),
     series(clean("./dist/*.css"), sassTask),
 );
+exports.default = defaultTask;

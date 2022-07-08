@@ -1,17 +1,18 @@
 .splide#splide
     .splide__track
         ul.splide__list
+            - const baseAdr = '../../assets/img/new/products'
             - 
                 const images = [
-                    '../../assets/img/products/product-yellow.png',
-                    '../../assets/img/products/product-green.png',
-                    '../../assets/img/products/product-violet.png',
-                    '../../assets/img/products/product-rose.png',
-                    '../../assets/img/products/product-black.png',
+                    '/product-yellow.png',
+                    '/product-green.png',
+                    '/product-violet.png',
+                    '/product-rose.png',
+                    '/product-black.png',
                     ]
             each i in images
                 li.splide__slide
                     .splide__item 
-                        img(src= i)
+                        img(src= baseAdr+i)
            
     #monitor  #FFA826
