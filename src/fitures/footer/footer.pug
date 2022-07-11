@@ -17,6 +17,7 @@ mixin footer(navs, phone)
                             li
                                 a(href=i.href)= i.name
                     a.footer__phone(href="tel:"+phone)= phone
+                
         .footer__version2 
             .footer__wrap 
                 .footer__up
@@ -35,3 +36,8 @@ mixin footer(navs, phone)
                         each k in navs 
                             li
                                 a(href=k.href)= k.name
+        .footer__ruws.ruws 
+            a.ruws__container(href="https://russiaws.ru/")
+                .ruws__img 
+                    img(src="../../assets/img/new/ruws.png", alt="ruws")
+                .ruws__title RUWS

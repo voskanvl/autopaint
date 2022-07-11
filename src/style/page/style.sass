@@ -15,6 +15,7 @@
 @import "./_fiveReason"
 @import "./_reason"
 @import "./_modal"
+@import "./_ruws"
 
 *,*::before,*::after
     box-sizing: border-box
@@ -218,10 +219,12 @@ body
         text-decoration: none
         color: #fff
         position: relative
-        &::before
-            content: ""
-            position: absolute
-            inset: 0
+    &__href::before
+        display: block
+        content: ""
+        position: absolute
+        inset: 0
+        z-index: 2
     &__caption, &__arrow
         // transform: rotate(90deg)
     &__caption

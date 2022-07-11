@@ -93,10 +93,19 @@ function start() {
     };
     close.addEventListener("click", closeModal);
     burger.addEventListener("click", openModal);
+
     const navs = document.querySelectorAll(".modal__nav a");
-    [...navs].forEach(a =>
-        a.addEventListener("click", () => setTimeout(closeModal, 200)),
-    );
+    const modalBook = document.querySelectorAll(".modal__book a");
+    console.log("🚀 ~ modalBook", modalBook);
+
+    function closeDelayed(elements) {
+        [...elements].forEach(a =>
+            a.addEventListener("click", () => setTimeout(closeModal, 200)),
+        );
+    }
+
+    closeDelayed(navs);
+    closeDelayed(modalBook);
 
     //--- VALIDATION ---
     const nameInput = document.querySelector(".form__name");
