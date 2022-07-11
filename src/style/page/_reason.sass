@@ -4,15 +4,24 @@
     align-items: center
     &:not(:last-child)
         margin-bottom: 45px
+
     &__text
         color: #fff
         width: 464px
         font-size: 18px
         margin-left: 27px
+
         @media screen and ( max-width: 640px )
             flex: 0 0 35vw
+
         & > h2
             font-size: 16px
             font-weight: 500
+            mix-blend-mode: difference
+            @media screen and ( max-width: 1143px )
+                font-size: clamp(16px, 3.06vw ,35px)
         & > p
             font-size: 12px
+            mix-blend-mode: difference
+            @media screen and ( max-width: 1143px )
+                font-size: clamp(12px, 1.83vw ,21px)
