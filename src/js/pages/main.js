@@ -129,9 +129,9 @@ function start() {
     phoneMask.mask(phoneInput);
     const emailMask = new Inputmask({ regex: "\\w+@\\w+\\.\\w+" });
     emailMask.mask(emailInput);
-    const textMask = new Inputmask({ regex: "[a-zA-Zа-яёА-ЯЁ0-9]{1,}" });
+    const textMask = new Inputmask({ regex: "[a-zA-Zа-яёА-ЯЁ0-9|\\s]{1,}" });
     textMask.mask(textInput);
-    const nameMask = new Inputmask({ regex: "[a-zA-Zа-яёА-ЯЁ0-9]{1,}" });
+    const nameMask = new Inputmask({ regex: "[a-zA-Zа-яёА-ЯЁ0-9|\\s]{1,}" });
     nameMask.mask(nameInput);
 
     send.addEventListener("click", event => {
